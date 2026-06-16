@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 427463967}
   - component: {fileID: 427463968}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -522,7 +522,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!114 &427463968
 MonoBehaviour:
@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e58fd5eeedbbc4f87280dcef9bf61e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BallMovement
-  speed: 15
+  speed: 5
 --- !u!54 &1299549955
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -646,7 +646,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &1299549956
 BoxCollider:
