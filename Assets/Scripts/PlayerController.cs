@@ -9,19 +9,41 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         background = GameObject.Find("Background");
-        transform.position = new Vector3(-8, background.transform.position.y / 2, 0);
+        if(gameObject.name == "PlayerOne")
+        {
+            transform.position = new Vector3(-8, background.transform.position.y / 2, 0);
+        }
+        if (gameObject.name == "PlayerTwo")
+        {
+            transform.position = new Vector3(8, background.transform.position.y / 2, 0);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W) && !(transform.position.y >= rangeLimit))
+        if (gameObject.name == "PlayerOne")
         {
-            transform.position += Vector3.up * speed * Time.deltaTime;
+            if (Input.GetKey(KeyCode.W) && !(transform.position.y >= rangeLimit))
+            {
+                transform.position += Vector3.up * speed * Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.S) && !(transform.position.y <= -rangeLimit))
+            {
+                transform.position += Vector3.down * speed * Time.deltaTime;
+            }
         }
-        if (Input.GetKey(KeyCode.S) && !(transform.position.y <= -rangeLimit))
+        if (gameObject.name == "PlayerTwo")
         {
-            transform.position += Vector3.down * speed * Time.deltaTime;
+            if (Input.GetKey(KeyCode.UpArrow) && !(transform.position.y >= rangeLimit))
+            {
+                transform.position += Vector3.up * speed * Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.DownArrow) && !(transform.position.y <= -rangeLimit))
+            {
+                transform.position += Vector3.down * speed * Time.deltaTime;
+            }
         }
+        
     }
 }
